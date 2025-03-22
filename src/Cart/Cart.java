@@ -16,6 +16,10 @@ public class Cart implements CartInterface {
         return cartList.size();
     }
 
+    public ArrayList<DataProductQuantity> getProductList() {
+        return cartList;
+    }
+
     @Override
     public void addProduct(Product product, int quantity) {
         for (DataProductQuantity dataProduct : cartList) {

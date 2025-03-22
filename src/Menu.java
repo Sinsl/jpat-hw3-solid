@@ -3,7 +3,8 @@ public enum Menu {
     ADD("Добавить товар в корзину"),
     DELETE("Удалить товар из корзины"),
     CLEAR("Очистить корзину"),
-    CART("Посмотреть корзину");
+    CART("Посмотреть корзину"),
+    DELIVERY("Оформить доставку");
 
     private final String description;
 

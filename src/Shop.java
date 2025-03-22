@@ -57,7 +57,6 @@ public class Shop {
                 continue;
             }
         }
-        sc.close();
         return new int[]{numProduct, quantity};
     }
 

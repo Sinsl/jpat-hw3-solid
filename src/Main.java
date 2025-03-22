@@ -1,6 +1,10 @@
 import Cart.Cart;
+import Delivery.Delivery;
+import Delivery.DeliveryCourier;
+import Products.DataProductQuantity;
 import Products.Product;
 
+import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -57,6 +61,19 @@ public class Main {
                     } else {
                         System.out.println("Корзина пуста. Давайте добавим туда товары");
                         yield 1;
+                    }
+                    yield -1;
+                }
+                case 5 -> {
+                    System.out.print("Выбрано " + Menu.values()[numGoTo].getDescription() + "\n");
+                    if (cart.hashCart()) {
+                        System.out.println("Тут мы должны выбрать доставку. Для примера добавлена курьерская");
+                        ArrayList<DataProductQuantity> copyCart = new ArrayList<>(cart.getProductList());
+                        cart.clearCart();
+                        Delivery delivery = new DeliveryCourier();
+                        delivery.stepDelivery(copyCart);
+                    } else {
+                        System.out.println("Корзина пуста, оформление доставки невозможно. Выберите другую операцию.");
                     }
                     yield -1;
                 }
