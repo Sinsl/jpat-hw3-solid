@@ -4,7 +4,7 @@ public class DataProductQuantity {
     private final Product product;
     private int quantity;
 
-    public DataProductQuantity(Product product, int quantity){
+    public DataProductQuantity(Product product, int quantity) {
         this.product = product;
         this.quantity = quantity;
     }

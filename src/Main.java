@@ -14,11 +14,12 @@ public class Main {
         shop.addProduct(new Product("Galaxy S22", "Samsung", 45000.00));
         Cart cart = new Cart();
         Scanner scanner = new Scanner(System.in);
+
         int numGoTo = -1;
-        while (numGoTo != 0){
-            if(numGoTo < 0) {
+        while (numGoTo != 0) {
+            if (numGoTo < 0) {
                 System.out.println("Введите номер действия:");
-                for(Menu goTo : Menu.values()) {
+                for (Menu goTo : Menu.values()) {
                     System.out.println(goTo.ordinal() + " - " + goTo.getDescription());
                 }
                 if (scanner.hasNextInt()) {

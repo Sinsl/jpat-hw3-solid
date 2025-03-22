@@ -5,8 +5,8 @@ import Products.Product;
 
 import java.util.ArrayList;
 
-public class Cart implements CartInterface{
-    private ArrayList<DataProductQuantity> cartList = new ArrayList<>();
+public class Cart implements CartInterface {
+    private final ArrayList<DataProductQuantity> cartList = new ArrayList<>();
 
     public boolean hashCart() {
         return !cartList.isEmpty();
@@ -33,7 +33,7 @@ public class Cart implements CartInterface{
     public void removeProduct(int productIdx, int quantity) {
         DataProductQuantity dataProduct = cartList.get(productIdx);
         int resultQuantity = dataProduct.getQuantity() - quantity;
-        if(resultQuantity <= 0) {
+        if (resultQuantity <= 0) {
             cartList.remove(dataProduct);
             System.out.println("Товара " + dataProduct.getProduct()
                     + " в корзине отрицательное количество, он удален.");

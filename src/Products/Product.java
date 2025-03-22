@@ -13,6 +13,7 @@ public class Product {
         this.name = name;
         this.manufacturer = manufacturer;
     }
+
     public Product(String name, String manufacturer, double price) {
         this.id = UUID.randomUUID();
         this.name = name;
@@ -20,7 +21,7 @@ public class Product {
         this.price = price;
     }
 
-    public UUID getId(){
+    public UUID getId() {
         return id;
     }
 
@@ -55,7 +56,7 @@ public class Product {
     }
 
     @Override
-    public  String toString() {
+    public String toString() {
         return this.manufacturer + " " + this.name + ", price - " + this.price;
     }
 }

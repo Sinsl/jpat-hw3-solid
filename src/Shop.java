@@ -6,21 +6,21 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Shop {
-    private ArrayList<Product> listProduct = new ArrayList<>();
+    private final ArrayList<Product> listProduct = new ArrayList<>();
 
     public void addProduct(Product product) {
-        if (!listProduct.contains(product)){
+        if (!listProduct.contains(product)) {
             listProduct.add(product);
         }
     }
 
     public void printListProduct() {
-        if(this.listProduct.isEmpty()) {
+        if (this.listProduct.isEmpty()) {
             System.out.println("Список товаров пуст");
         } else {
             System.out.println("Список товаров:");
             int counter = 1;
-            for (Product product : this.listProduct){
+            for (Product product : this.listProduct) {
                 System.out.println(counter + ". " + product);
                 counter++;
             }
@@ -35,7 +35,7 @@ public class Shop {
             System.out.println("Введите номер выбранного товара или 0 для смены операции.");
             try {
                 numProduct = sc.nextInt();
-                if(numProduct == 0) {
+                if (numProduct == 0) {
                     break;
                 }
                 if (numProduct < 0 || (numProduct > maxSize)) {
@@ -45,7 +45,7 @@ public class Shop {
                 }
                 System.out.println("Введите количество товара: ");
                 quantity = sc.nextInt();
-                if(quantity <= 0) {
+                if (quantity <= 0) {
                     System.out.println("Введено некорректное количество. Повторите операцию.");
                     sc.nextLine();
                     continue;
@@ -58,7 +58,7 @@ public class Shop {
             }
         }
         sc.close();
-        return new int[] {numProduct, quantity};
+        return new int[]{numProduct, quantity};
     }
 
     public int removeProductFromCart(Cart cart) {
@@ -78,7 +78,7 @@ public class Shop {
         return -1;
     }
 
-    public int addProductToCart(Cart cart){
+    public int addProductToCart(Cart cart) {
         this.printListProduct();
         while (true) {
             int[] select = this.selectionProduct(listProduct.size());
@@ -88,7 +88,6 @@ public class Shop {
                 break;
             }
         }
-
         return -1;
     }
 }

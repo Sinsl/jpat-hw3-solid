@@ -5,6 +5,8 @@ public enum Menu {
     CLEAR("Очистить корзину"),
     CART("Посмотреть корзину");
 
+    private final String description;
+
     private Menu(String description) {
         this.description = description;
     }
@@ -12,6 +14,4 @@ public enum Menu {
     public String getDescription() {
         return description;
     }
-
-    private final String description;
 }
